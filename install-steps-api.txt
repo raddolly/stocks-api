@@ -1,0 +1,46 @@
+chmod 
+
+ssh -i stocks-key.pem ubuntu@54.208.193.123
+
+sudo apt update
+
+sudo apt install python3 -y
+
+sudo apt install python3-pip -y
+
+sudo apt install virtualenv
+
+pip3 install --user virtualenv
+
+pwd -> /home/ubuntu
+mkdir venv
+cd venv
+pwd -> /home/ec2-user/venv
+
+sudo chown ubuntu:ubuntu -R venv
+
+pip3 install --user boto3
+
+pip3 install django
+
+Pip3 install flask
+
+Pip3 install nsepy
+
+Pip3 install lxml
+
+Exit
+
+scp -i stocks-key.pem -r ~/desktop/stocks-project/api ubuntu@54.205.91.14:venv/
+
+ssh -i stocks-key.pem ubuntu@54.205.91.14
+
+virtualenv -p /usr/bin/python3 python3
+
+source /home/ubuntu/venv/python3/bin/activate
+
+python /home/ubuntu/venv/api/src/__main__.py runserver 0:8080
+
+vi /home/ubuntu/venv/api/src/stocks/app.py
+
+For forbidden error... stop and start ec2. New ip will work
